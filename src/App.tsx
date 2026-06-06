@@ -1,31 +1,24 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { Login } from "./pages/Login/Login";
+import { Register } from "./pages/Register/Register";
+import { CompleteRegister } from "./pages/CompleteRegister/CompleteRegister";
+import { ForgotPassword } from "./pages/ForgotPassword/ForgotPassword";
+import { ResetPassword } from "./pages/ResetPassword/ResetPassword";
 
-function Home() {
-  return (
-    <main className="min-h-screen bg-[#f4f6f5] flex items-center justify-center">
-      <h1 className="text-4xl font-black text-[#247c2c]">
-        Página inicial SEMEAR
-      </h1>
-    </main>
-  );
-}
-
-function App() {
+export function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
 
-        <Route path="/cadastro" element={<h1>Cadastro</h1>} />
-        <Route path="/completar-cadastro" element={<h1>Completar cadastro</h1>} />
-        <Route path="/recuperar-senha" element={<h1>Recuperar senha</h1>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/complete-register" element={<CompleteRegister />} />
+
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
