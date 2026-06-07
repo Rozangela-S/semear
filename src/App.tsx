@@ -5,6 +5,8 @@ import { Register } from "./pages/Register/Register";
 import { CompleteRegister } from "./pages/CompleteRegister/CompleteRegister";
 import { ForgotPassword } from "./pages/ForgotPassword/ForgotPassword";
 import { ResetPassword } from "./pages/ResetPassword/ResetPassword";
+import LandingPage from "./pages/landing/landing";
+import Dashboard from "./pages/dashboard/dashboad";
 
 export function App() {
   return (
@@ -18,6 +20,11 @@ export function App() {
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
+
       </Routes>
     </BrowserRouter>
   );
