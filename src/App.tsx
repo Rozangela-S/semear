@@ -5,7 +5,6 @@ import { Register } from "./pages/Register/Register";
 import { CompleteRegister } from "./pages/CompleteRegister/CompleteRegister";
 import { ForgotPassword } from "./pages/ForgotPassword/ForgotPassword";
 import { ResetPassword } from "./pages/ResetPassword/ResetPassword";
-import LandingPage from "./pages/landing/landing";
 import Dashboard from "./pages/dashboard/dashboad";
 
 export function App() {
