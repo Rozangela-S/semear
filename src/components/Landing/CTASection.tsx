@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 
-export function CTASection() {
+interface CTASectionProps {
+  onOpenDemo: () => void;
+}
+
+export function CTASection({ onOpenDemo }: CTASectionProps) {
   return (
     <section className="bg-white px-6 py-16 transition-colors duration-500 dark:bg-[#06130a]">
       <div
@@ -88,6 +92,7 @@ export function CTASection() {
 
           <button
             type="button"
+            onClick={onOpenDemo}
             className="
               flex
               w-full
@@ -111,7 +116,6 @@ export function CTASection() {
             "
           >
             Ver demonstração
-
             <MdArrowForward className="text-lg" />
           </button>
         </div>

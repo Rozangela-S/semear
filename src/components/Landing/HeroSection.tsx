@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 
 import { HeroDashboard } from "./HeroDashboard";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  onOpenDemo: () => void;
+}
+
+export function HeroSection({ onOpenDemo }: HeroSectionProps) {
   return (
     <section
-      id="planos"
+      id="inicio"
       className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 transition-colors duration-500 sm:px-6 sm:py-12 lg:grid-cols-2 lg:gap-10 lg:py-14"
     >
       <div className="text-center lg:text-left">
@@ -34,6 +38,7 @@ export function HeroSection() {
 
           <button
             type="button"
+            onClick={onOpenDemo}
             className="flex w-full max-w-[260px] items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-8 py-4 text-sm font-black text-gray-800 transition hover:-translate-y-0.5 hover:bg-gray-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
           >
             <MdPlayCircle className="text-xl" />
