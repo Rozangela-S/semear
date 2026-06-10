@@ -82,12 +82,10 @@ export function Login() {
     const typedCnpj = onlyNumbers(login);
 
     const user = users.find((storedUser) => {
-      const sameEmail =
-        storedUser.email.toLowerCase() === typedLogin;
+      const sameEmail = storedUser.email.toLowerCase() === typedLogin;
 
       const sameCnpj =
-        storedUser.cnpj &&
-        onlyNumbers(storedUser.cnpj) === typedCnpj;
+        storedUser.cnpj && onlyNumbers(storedUser.cnpj) === typedCnpj;
 
       return sameEmail || sameCnpj;
     });
@@ -110,7 +108,7 @@ export function Login() {
       })
     );
 
-    navigate("/home");
+    navigate("/dashboard");
   }
 
   return (
@@ -131,7 +129,7 @@ export function Login() {
     >
       <form
         onSubmit={handleLogin}
-        className="mx-auto flex w-full max-w-[500px] flex-col gap-2 auth-page-animation"
+        className="auth-page-animation mx-auto flex w-full max-w-[500px] flex-col gap-2"
       >
         <div>
           <AuthInput
@@ -171,18 +169,7 @@ export function Login() {
 
         <Link
           to="/forgot-password"
-          className="
-            mx-auto mt-1 flex items-center gap-2
-            text-sm font-black
-            text-[#16852f]
-            transition-all duration-300
-
-            hover:scale-[1.03]
-            hover:text-[#105d25]
-
-            dark:text-[#76e08c]
-            dark:hover:text-white
-          "
+          className="mx-auto mt-1 flex items-center gap-2 text-sm font-black text-[#16852f] transition-all duration-300 hover:scale-[1.03] hover:text-[#105d25] dark:text-[#76e08c] dark:hover:text-white"
         >
           Esqueci minha senha
           <span>→</span>
